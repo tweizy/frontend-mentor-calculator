@@ -1,0 +1,226 @@
+:root{
+  --background-color: hsl(222, 26%, 31%);
+  --screen-color: hsl(224, 36%, 15%);
+  --text-color: white;
+  --numbers-btn-color: hsl(30, 25%, 89%);
+  --switch-color: hsl(223, 31%, 20%);
+  --del-res-color: hsl(225, 21%, 49%);
+  --eq-color: hsl(6, 63%, 50%);
+  --keyboard-background-color: hsl(223, 31%, 20%);
+  --numbers-btn-text: hsl(221, 14%, 31%);
+  --del-res-text: white;
+  --eq-btn-text: white;
+  --slider-color: hsl(6, 63%, 50%);
+  --res-del-hover: hsl(225, 20%, 35%);
+  --eq-hover: hsl(6, 63%, 33%);
+  --num-hover: hsl(30, 5%, 63%);
+
+  --display1-font-size: 20px;
+  --display1-margin-bottom: 40px;
+
+  --display2-font-size: 35px;
+  --display2-position: absolute;
+  --display2-margin-bottom: -30px;
+}
+
+.theme1{
+  --background-color: hsl(0, 0%, 90%);
+  --screen-color: hsl(0, 0%, 93%);
+  --text-color: hsl(60, 10%, 19%);
+  --numbers-btn-color: hsl(30, 25%, 89%);
+  --switch-color: hsl(0, 5%, 81%);
+  --del-res-color: hsl(185, 42%, 37%);
+  --eq-color: hsl(25, 98%, 40%);
+  --keyboard-background-color: hsl(0, 5%, 81%);
+  --numbers-btn-text: hsl(60, 10%, 19%);
+  --del-res-text: white;
+  --eq-btn-text: white;
+  --slider-color: hsl(25, 98%, 40%);
+  --res-del-hover: hsl(186, 40%, 26%);
+  --eq-hover: hsl(25, 97%, 26%);
+  --num-hover: hsl(27, 6%, 63%);
+
+  --display1-font-size: 20px;
+  --display1-margin-bottom: 40px;
+
+  --display2-font-size: 35px;
+  --display2-position: absolute;
+  --display2-margin-bottom: -30px;
+}
+
+.eqbutton{
+  --display1-font-size: 0px;
+
+  --display2-font-size: 50px;
+  --display2-position: absolute;
+  --display2-margin-bottom: -10px;
+}
+
+body{
+    font-family: "League Spartan", sans-serif;
+    max-width: 440px;
+    margin: auto;
+    background-color:  var(--background-color);
+}
+
+button{
+    font-family: "League Spartan", sans-serif;
+}
+
+.headerr{
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 25px;
+    margin-bottom: -10px;
+}
+
+.theme{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.theme p{
+    margin-right: 20px;
+    font-size: 10px;
+}
+
+.output{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background-color: var(--screen-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    color: var(--text-color);
+    padding-right: 20px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+#display1{
+  font-size: var(--display1-font-size);
+  margin-bottom: var(--display1-margin-bottom);
+}
+
+#display2{
+  font-size: var(--display2-font-size);
+  position: var(--display2-position);
+  margin-bottom: var(--display2-margin-bottom);
+}
+
+.calculator{
+    background-color: var(--keyboard-background-color);
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator button{
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--numbers-btn-color);
+    font-family: "League Spartan", sans-serif;
+    font-size: 30px;
+    color: var(--numbers-btn-text);
+    border: 0px;
+}
+
+#reset-btn{
+    grid-column: 1/3;
+    background-color: var(--del-res-color);
+    color: var(--del-res-text);
+}
+
+#eq-btn{
+    grid-column: 3/5;
+    color: var(--eq-btn-text);
+    background-color:var(--eq-color);
+}
+
+#del-btn{
+    color: var(--del-res-text);
+    background-color: var(--del-res-color);
+}
+
+.num-btn:hover, .operand:hover, .period-btn:hover{
+  background-color: var(--num-hover);
+}
+
+#reset-btn:hover, #del-btn:hover{
+  background-color: var(--res-del-hover);
+}
+
+#eq-btn:hover{
+  background-color: var(--eq-hover);
+}
+
+/* SWITCH CSS CODE */
+
+.switch {
+    position: relative;
+    /* display: inline-block; */
+    width: 60px;
+    height: 24px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--switch-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--slider-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  /* input:checked + .slider {
+    background-color: #ccc;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #ccc;
+  } */
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(37px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
